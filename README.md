@@ -12,7 +12,13 @@ Note - the code does not contain the data used for the analysis. If you want acc
 ## Description of Files
 
 - Feature Extraction
--- "8.Feature Extraction For Multimodal Sensor Pipeline (covid related, weekly).ipynb": runs the code for feature extraction from all sensors. the "passivefeatureslite" folder contains the feature extraction helper functions. 
-- tochiBasedPipeline.py implements the ML pipeline for 1-sensor models. 
-- tochiBasedPipelineAutomate.ipynb automates the process of tuning ML parameters for 1-sensor models. It calls tochiBasedPipeline.py via the command line to do so. 
--  
+  - "8.Feature Extraction For Multimodal Sensor Pipeline (covid related, weekly).ipynb": runs the code for feature extraction from all sensors. the "passivefeatureslite" folder contains the feature extraction helper functions. 
+- ML Pipeline
+  - tochiBasedPipeline.py implements the ML pipeline for 1-sensor models. This contains the code for the feature selection method proposed in the paper - Nested Randomized Logistic Regression, and leverages Logistic Regression and Gradient Boosting Classifier.
+  - tochiBasedPipelineAutomate.ipynb automates the process of tuning ML parameters for 1-sensor models. It calls tochiBasedPipeline.py via the command line to do so. 
+  - tochiPipelineCombinationsWithArgs.py and tochiCombinationsHelper.py combine the 1-sensor models. NOTE - The same 10 folds are maintained between 1-sensor model training and the combination models, as the 1-sensor training and combination model training steps are all part of 1 pipeline.
+  - tochiPipelineCombinationsWithArgsWrapper.ipynb calls tochiPipelineCombinationsWithArgs.py for different sensor combinations and generates the final results.
+-  Post-hoc
+  - tochiPipelineBestCombinations.ipynb gets the best-sensor model post-hoc.
+  - tochiPipelineGetSimpleBaseline.ipynb gets the majority class baseline.
+- All other files are helper functions.
