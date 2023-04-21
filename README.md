@@ -18,7 +18,7 @@ Note - the code does not contain the data used for the analysis. If you want acc
   - tochiBasedPipelineAutomate.ipynb automates the process of tuning ML parameters for 1-sensor models. It calls tochiBasedPipeline.py via the command line to do so. 
   - tochiPipelineCombinationsWithArgs.py and tochiCombinationsHelper.py combine the 1-sensor models. NOTE - The same 10 folds are maintained between 1-sensor model training and the combination models, as the 1-sensor training and combination model training steps are all part of 1 pipeline.
   - tochiPipelineCombinationsWithArgsWrapper.ipynb calls tochiPipelineCombinationsWithArgs.py for different sensor combinations and generates the final results.
--  Post-hoc
+- Post-hoc
   - tochiPipelineBestCombinations.ipynb gets the best-sensor model post-hoc.
   - tochiPipelineGetSimpleBaseline.ipynb gets the majority class baseline.
 - All other files are helper functions.
